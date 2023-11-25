@@ -21,7 +21,7 @@ export default function HomePage() {
   const { colorScheme } = useMantineColorScheme();
 
   useEffect(() => {
-    fetch('/markdown/Home.md')
+    fetch('markdown/Home.md')
       .then((res) => res.text())
       .then((text) => setContent(text));
   }, []);
@@ -89,7 +89,7 @@ export default function HomePage() {
           maw={200}
           mx="auto"
           radius={'50%'}
-          src="/images/portrait.jpeg"
+          src="images/portrait.jpeg"
           alt="Random image"
         />
       </Group>
