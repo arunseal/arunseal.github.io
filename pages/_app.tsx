@@ -2,12 +2,15 @@ import { useState } from 'react';
 import NextApp, { AppProps, AppContext } from 'next/app';
 import { getCookie, setCookie } from 'cookies-next';
 import Head from 'next/head';
-import { MantineProvider, ColorScheme, ColorSchemeProvider } from '@mantine/core';
+import { MantineProvider, ColorScheme, ColorSchemeProvider, AppShell } from '@mantine/core';
 import { Notifications } from '@mantine/notifications';
+import AppHeader from '../components/Header';
+import { NavbarSimple } from '../components/Navbar';
 
 export default function App(props: AppProps & { colorScheme: ColorScheme }) {
   const { Component, pageProps } = props;
   const [colorScheme, setColorScheme] = useState<ColorScheme>(props.colorScheme);
+  const [opened, setOpened] = useState(false);
 
   const toggleColorScheme = (value?: ColorScheme) => {
     const nextColorScheme = value || (colorScheme === 'dark' ? 'light' : 'dark');
@@ -15,17 +18,33 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
     setCookie('mantine-color-scheme', nextColorScheme, { maxAge: 60 * 60 * 24 * 30 });
   };
 
+  const handleOpened = () => {
+    setOpened((r) => !r);
+  };
+
   return (
     <>
       <Head>
-        <title>Mantine next example</title>
+        <title>Arunava Seal</title>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
-        <link rel="shortcut icon" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/images/rivian.svg" />
       </Head>
 
       <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
         <MantineProvider theme={{ colorScheme }} withGlobalStyles withNormalizeCSS>
-          <Component {...pageProps} />
+          <AppShell
+            header={<AppHeader opened={opened} handleOpened={handleOpened} />}
+            navbar={<NavbarSimple opened={opened} />}
+            padding={'sm'}
+            styles={(theme) => ({
+              main: {
+                backgroundColor:
+                  theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0],
+              },
+            })}
+          >
+            <Component {...pageProps} />
+          </AppShell>
           <Notifications />
         </MantineProvider>
       </ColorSchemeProvider>
