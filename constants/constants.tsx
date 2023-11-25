@@ -7,7 +7,7 @@ import {
 } from '@tabler/icons-react';
 
 export const PAGES = [
-  { link: '/', label: 'Home' },
+  { link: '/home', label: 'Home' },
   { link: '/experience', label: 'Experience' },
   { link: '/education', label: 'Education' },
   { link: '/publications', label: 'Publications' },
