@@ -1,21 +1,8 @@
-import {
-  Text,
-  Group,
-  Button,
-  Header,
-  createStyles,
-  rem,
-  Box,
-  MediaQuery,
-  Burger,
-  useMantineTheme,
-} from '@mantine/core';
-import Link from 'next/link';
+import { Text, Group, Header, createStyles, rem, Box, MediaQuery, Burger } from '@mantine/core';
 import Image from 'next/image';
 import rivLogo from '../public/images/rivian.svg';
 import mercLogo from '../public/images/merc.svg';
 import umichLogo from '../public/images/umich.svg';
-import { FC } from 'react';
 import { ColorSchemeToggle } from './ColorSchemeToggle/ColorSchemeToggle';
 
 type AppHeaderProps = {
@@ -69,10 +56,10 @@ const AppHeader = ({ opened, handleOpened }: AppHeaderProps) => {
           <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
             <Burger opened={opened} onClick={handleOpened} size="sm" mr="xl" />
           </MediaQuery>
-          <Text fz="xl">Arunava Seal</Text>
           <Image src={umichLogo} alt="Rivian Logo" height={35} />
           <Image src={mercLogo} alt="Mercedes Logo" height={35} />
           <Image src={rivLogo} alt="Michigan Logo" height={35} />
+          <Text fz="xl">Arunava Seal</Text>
         </Group>
         <Group position="right">
           <ColorSchemeToggle />

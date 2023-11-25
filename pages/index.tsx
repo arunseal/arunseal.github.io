@@ -13,8 +13,10 @@ import remarkGfm from 'remark-gfm';
 import { Grid } from '@mantine/core';
 import { List, ThemeIcon } from '@mantine/core';
 import { SocialItem } from '../components/SocialItem';
+import { useMantineTheme } from '@mantine/core';
 
 export default function HomePage() {
+  const theme = useMantineTheme();
   const [content, setContent] = useState('');
   const { colorScheme } = useMantineColorScheme();
 
@@ -25,7 +27,7 @@ export default function HomePage() {
   }, []);
 
   return (
-    <Container sx={{ height: '100vh', padding: '15px' }} maw="90%">
+    <Container sx={{ height: '100vh', padding: '15px', marginTop: '2%' }} maw="90%">
       <Group position="apart" spacing="sm">
         <Stack align="center">
           <Title
@@ -95,7 +97,7 @@ export default function HomePage() {
       <Grid grow gutter={'sm'}>
         <Grid.Col span={8}>
           <Box
-            bg={colorScheme === 'dark' ? 'gray.9' : 'gray.1'}
+            bg={colorScheme === 'dark' ? 'gray.9' : 'gray.2'}
             p={25}
             m={10}
             sx={{ borderRadius: '25px' }}
@@ -105,7 +107,7 @@ export default function HomePage() {
                 // Rewrite `em`s (`*like so*`) to `i` with a red foreground color.
                 em(props) {
                   const { node, ...rest } = props;
-                  return <i style={{ color: '#E8590C' }} {...rest} />;
+                  return <i style={{ color: theme.colors.yellow[9] }} {...rest} />;
                 },
               }}
               remarkPlugins={[remarkGfm]}
@@ -115,7 +117,7 @@ export default function HomePage() {
         </Grid.Col>
         <Grid.Col span={4}>
           <Box
-            bg={colorScheme === 'dark' ? 'gray.9' : 'gray.1'}
+            bg={colorScheme === 'dark' ? 'gray.9' : 'gray.2'}
             p={25}
             m={10}
             sx={{ borderRadius: '25px' }}

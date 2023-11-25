@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { createStyles, Navbar, getStylesRef, Button } from '@mantine/core';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 const useStyles = createStyles((theme) => ({
@@ -32,14 +33,14 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-const data = [
+const PAGES = [
   { link: '/', label: 'Home' },
   { link: '/experience', label: 'Experience' },
   { link: '/education', label: 'Education' },
   { link: '/publications', label: 'Publications' },
   { link: '/patents', label: 'Patents' },
   { link: '/certifications', label: 'Certifications' },
-  { link: '/extra-curriculars', label: 'Extra-Curricular' },
+  { link: '/extracurriculars', label: 'Extra-Curriculars' },
 ];
 
 type NavbarProps = {
@@ -47,19 +48,22 @@ type NavbarProps = {
 };
 
 export const NavbarSimple = ({ opened }: NavbarProps) => {
+  const router = useRouter();
+  // Access the current page from the router object
+  const currentPageLink = router.pathname;
   const { classes, cx } = useStyles();
-  const [active, setActive] = useState('Home');
+  const [active, setActive] = useState(currentPageLink);
 
-  const links = data.map((item) => (
+  const links = PAGES.map((item) => (
     <Button
       size="lg"
       variant="subtle"
-      className={cx(classes.link, { [classes.linkActive]: item.label === active })}
+      className={cx(classes.link, { [classes.linkActive]: item.link === active })}
       component={Link}
       href={item.link}
       key={item.label}
       onClick={() => {
-        setActive(item.label);
+        setActive(item.link);
       }}
     >
       {item.label}
@@ -73,7 +77,7 @@ export const NavbarSimple = ({ opened }: NavbarProps) => {
       p="md"
       hiddenBreakpoint="sm"
       hidden={!opened}
-      width={{ sm: 150, lg: 200 }}
+      width={{ sm: 160, lg: 200 }}
     >
       <Navbar.Section>{links}</Navbar.Section>
     </Navbar>

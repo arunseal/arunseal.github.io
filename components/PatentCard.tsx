@@ -13,7 +13,7 @@ const PatentCard: React.FC<CardProps> = ({ file }) => {
     <MantineCard
       padding={'2% 5%'}
       sx={{ width: '90%', margin: '0 auto', borderRadius: '30px' }}
-      bg={colorScheme === 'dark' ? 'gray.9' : 'gray.1'}
+      bg={colorScheme === 'dark' ? 'gray.9' : 'gray.2'}
     >
       <InfoText file={file} />
     </MantineCard>

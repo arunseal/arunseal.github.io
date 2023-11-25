@@ -10,17 +10,17 @@ _Sunnyvale, California (Mar 2019 - Feb 2022)_
 
 ### Software Engineer, Early Talent Program (Rotational) (Mar 2019-Mar 2020)
 
-_Sensor Fusion (Autonomous Driving) [October 2019- March 2020]_
+#### Sensor Fusion (Autonomous Driving) [October 2019- March 2020]
 
 - Led feature engineering, data collection and validation, optimization, evaluation and testing for multi-stage multi-modal road topology learning for map-less driving using deep learning techniques. (patented).
 - Developed State-Of-the-Art (SOTA) semantic image segmentation and classification algorithms using Python, Tensorflow and C++
 
-_Localization (Autonomous Driving) [July 2019-October 2019]_
+#### Localization (Autonomous Driving) [July 2019-October 2019]
 
 - Developed and integrated a Surround View Camera module using C++ into the Localization package for a Mercedes-Benz autonomous vehicle.
 - Helped to reduce localization errors on highways and expressways by over 50%.
 
-_Speech and Digital Assistants [March 2019-July 2019]_
+#### Speech and Digital Assistants [March 2019-July 2019]
 
 - Collaborated on Hey Mercedes voice assistant integration with external natural language providers by creating Python services and machine learning tools using Tensorflow.
 - Built new user-facing applications in C# for the Mercedes-Benz infotainment unit.

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card as MantineCard, Grid, Col, Center, Button, Anchor } from '@mantine/core';
+import { Card as MantineCard, Grid, Col, Center, Button } from '@mantine/core';
 import { IconExternalLink } from '@tabler/icons-react';
 import InfoText from './InfoText';
 import { useMantineColorScheme } from '@mantine/core';
@@ -15,7 +15,7 @@ const PublicationCard: React.FC<CardProps> = ({ file, link }) => {
     <MantineCard
       padding={'2% 5%'}
       sx={{ width: '90%', margin: '0 auto', borderRadius: '30px' }}
-      bg={colorScheme === 'dark' ? 'gray.9' : 'gray.1'}
+      bg={colorScheme === 'dark' ? 'gray.9' : 'gray.2'}
     >
       <Grid>
         <Col span={10}>

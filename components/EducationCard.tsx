@@ -16,7 +16,7 @@ const EducationCard: React.FC<CardProps> = ({ file, imageSrc, bgEnabled }) => {
     <MantineCard
       padding={'2% 5%'}
       sx={{ width: '90%', margin: '0 auto', borderRadius: '30px' }}
-      bg={colorScheme === 'dark' ? 'gray.9' : 'gray.1'}
+      bg={colorScheme === 'dark' ? 'gray.9' : 'gray.2'}
     >
       <Grid>
         <Col span={9}>
@@ -29,6 +29,7 @@ const EducationCard: React.FC<CardProps> = ({ file, imageSrc, bgEnabled }) => {
               alt="Logo"
               width={180}
               height={180}
+              fit="contain"
               radius={'30px'}
               style={{
                 backgroundColor: bgEnabled ? 'white' : undefined,
