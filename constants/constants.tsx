@@ -42,48 +42,48 @@ export const SOCIALS = [
 
 export const PUBLICATIONS = [
   {
-    file: 'markdown/publications/pub1.md',
+    file: 'public/markdown/publications/pub1.md',
     link: 'https://arxiv.org/abs/2104.00084',
   },
   {
-    file: 'markdown/publications/pub2.md',
+    file: 'public/markdown/publications/pub2.md',
     link: 'https://arxiv.org/abs/2009.09093',
   },
   {
-    file: 'markdown/publications/pub3.md',
+    file: 'public/markdown/publications/pub3.md',
     link: 'https://www.irjet.net/archives/V4/i7/IRJET-V4I7565.pdf',
   },
   {
-    file: 'markdown/publications/pub4.md',
+    file: 'public/markdown/publications/pub4.md',
     link: 'https://ieeexplore.ieee.org/document/8067579',
   },
 ];
 
 export const PATENTS = [
   {
-    file: 'markdown/patents/patent1.md',
+    file: 'public/markdown/patents/patent1.md',
   },
   {
-    file: 'markdown/patents/patent2.md',
+    file: 'public/markdown/patents/patent2.md',
   },
   {
-    file: 'markdown/patents/patent3.md',
+    file: 'public/markdown/patents/patent3.md',
   },
 ];
 
 export const EDUCATIONS = [
   {
-    file: 'markdown/education/umich.md',
+    file: 'public/markdown/education/umich.md',
     imageSrc: 'images/UMLogo.png',
     bgEnabled: false,
   },
   {
-    file: 'markdown/education/vit.md',
+    file: 'public/markdown/education/vit.md',
     imageSrc: 'images/vit.png',
     bgEnabled: true,
   },
   {
-    file: 'markdown/education/sphs.md',
+    file: 'public/markdown/education/sphs.md',
     imageSrc: 'images/sphs.png',
     bgEnabled: false,
   },
@@ -91,37 +91,37 @@ export const EDUCATIONS = [
 
 export const EXPERIENCES = [
   {
-    file: 'markdown/experience/rivian.md',
+    file: 'public/markdown/experience/rivian.md',
     imageSrc: 'images/rivian.svg',
     bgEnabled: false,
   },
   {
-    file: 'markdown/experience/merc.md',
+    file: 'public/markdown/experience/merc.md',
     imageSrc: 'images/merc.svg',
     bgEnabled: false,
   },
   {
-    file: 'markdown/experience/inovision.md',
+    file: 'public/markdown/experience/inovision.md',
     imageSrc: 'images/inovision.png',
     bgEnabled: false,
   },
   {
-    file: 'markdown/experience/mdp.md',
+    file: 'public/markdown/experience/mdp.md',
     imageSrc: 'images/mdp.png',
     bgEnabled: false,
   },
   {
-    file: 'markdown/experience/cair.md',
+    file: 'public/markdown/experience/cair.md',
     imageSrc: 'images/cair.jpeg',
     bgEnabled: false,
   },
   {
-    file: 'markdown/experience/hal.md',
+    file: 'public/markdown/experience/hal.md',
     imageSrc: 'images/hal.jpeg',
     bgEnabled: false,
   },
   {
-    file: 'markdown/experience/cesc.md',
+    file: 'public/markdown/experience/cesc.md',
     imageSrc: 'images/cesc.jpeg',
     bgEnabled: false,
   },
@@ -234,22 +234,22 @@ export const CERTIFICATES = [
 
 export const EXTRACURRICULARS = [
   {
-    file: 'markdown/extracurriculars/seds.md',
+    file: 'public/markdown/extracurriculars/seds.md',
     imageSrc: 'images/seds.png',
     bgEnabled: false,
   },
   {
-    file: 'markdown/extracurriculars/ieee.md',
+    file: 'public/markdown/extracurriculars/ieee.md',
     imageSrc: 'images/ieee.jpg',
     bgEnabled: false,
   },
   {
-    file: 'markdown/extracurriculars/vfs.md',
+    file: 'public/markdown/extracurriculars/vfs.md',
     imageSrc: 'images/vfs.jpeg',
     bgEnabled: false,
   },
   {
-    file: 'markdown/extracurriculars/hindu.md',
+    file: 'public/markdown/extracurriculars/hindu.md',
     imageSrc: 'images/hindu.jpeg',
     bgEnabled: false,
   },

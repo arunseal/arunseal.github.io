@@ -1,8 +1,28 @@
 import { Container, Stack, Title } from '@mantine/core';
 import EducationCard from '../components/EducationCard';
 import { EDUCATIONS } from '../constants/constants';
+import { getMarkDown } from '../lib/getMarkDown';
+import { TextWithImage } from '../components/types';
 
-export default function Education() {
+export async function getStaticProps() {
+  let list: TextWithImage[] = [];
+
+  EDUCATIONS.map(async (edu) => {
+    const { content } = await getMarkDown(edu.file);
+    list.push({ text: content, imageSrc: edu.imageSrc, bgEnabled: edu.bgEnabled });
+  });
+  return {
+    props: {
+      list,
+    },
+  };
+}
+
+interface EducationProps {
+  list: TextWithImage[];
+}
+
+const Education: React.FC<EducationProps> = ({ list }) => {
   return (
     <Container
       sx={{
@@ -18,10 +38,17 @@ export default function Education() {
         <Title order={1} variant="gradient">
           Education
         </Title>
-        {EDUCATIONS.map((edu) => (
-          <EducationCard imageSrc={edu.imageSrc} file={edu.file} bgEnabled={edu.bgEnabled} />
+        {list.map((edu) => (
+          <EducationCard
+            imageSrc={edu.imageSrc}
+            text={edu.text}
+            bgEnabled={edu.bgEnabled}
+            key={edu.text}
+          />
         ))}
       </Stack>
     </Container>
   );
-}
+};
+
+export default Education;

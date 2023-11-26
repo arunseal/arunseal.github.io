@@ -1,8 +1,28 @@
 import { Container, Stack, Title } from '@mantine/core';
 import ExperienceCard from '../components/ExperienceCard';
 import { EXPERIENCES } from '../constants/constants';
+import { getMarkDown } from '../lib/getMarkDown';
+import { TextWithImage } from '../components/types';
 
-export default function Experience() {
+export async function getStaticProps() {
+  let list: TextWithImage[] = [];
+
+  EXPERIENCES.map(async (exp) => {
+    const { content } = await getMarkDown(exp.file);
+    list.push({ text: content, imageSrc: exp.imageSrc, bgEnabled: exp.bgEnabled });
+  });
+  return {
+    props: {
+      list,
+    },
+  };
+}
+
+interface ExperienceProps {
+  list: TextWithImage[];
+}
+
+const Experience: React.FC<ExperienceProps> = ({ list }) => {
   return (
     <Container
       sx={{
@@ -18,10 +38,17 @@ export default function Experience() {
         <Title order={1} variant="gradient">
           Experience
         </Title>
-        {EXPERIENCES.map((exp) => (
-          <ExperienceCard file={exp.file} imageSrc={exp.imageSrc} bgEnabled={exp.bgEnabled} />
+        {list.map((exp) => (
+          <ExperienceCard
+            text={exp.text}
+            imageSrc={exp.imageSrc}
+            bgEnabled={exp.bgEnabled}
+            key={exp.text}
+          />
         ))}
       </Stack>
     </Container>
   );
-}
+};
+
+export default Experience;

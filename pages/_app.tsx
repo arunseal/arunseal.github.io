@@ -34,7 +34,7 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
         <MantineProvider theme={{ colorScheme }} withGlobalStyles withNormalizeCSS>
           <AppShell
             header={<AppHeader opened={opened} handleOpened={handleOpened} />}
-            navbar={<NavbarSimple opened={opened} />}
+            navbar={<NavbarSimple opened={opened} handleOpened={handleOpened} />}
             padding={'sm'}
             styles={(theme) => ({
               main: {

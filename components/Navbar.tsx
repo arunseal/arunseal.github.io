@@ -45,9 +45,10 @@ const PAGES = [
 
 type NavbarProps = {
   opened: boolean;
+  handleOpened: () => void;
 };
 
-export const NavbarSimple = ({ opened }: NavbarProps) => {
+export const NavbarSimple = ({ opened, handleOpened }: NavbarProps) => {
   const router = useRouter();
   // Access the current page from the router object
   const currentPageLink = router.pathname;
@@ -64,6 +65,7 @@ export const NavbarSimple = ({ opened }: NavbarProps) => {
       key={item.label}
       onClick={() => {
         setActive(item.link);
+        handleOpened();
       }}
     >
       {item.label}

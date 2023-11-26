@@ -23,7 +23,7 @@ const CertificateCard = () => {
     >
       <Stack>
         {CERTIFICATES.map((cert) => (
-          <>
+          <div key={cert.title}>
             <Group position="apart" spacing={'md'} grow>
               <Title order={3} color={theme.colors.blue[6]}>
                 {cert.title}
@@ -44,7 +44,7 @@ const CertificateCard = () => {
               </Button>
             </Group>
             <Divider my="lg" size="lg" variant="solid" />
-          </>
+          </div>
         ))}
       </Stack>
     </MantineCard>

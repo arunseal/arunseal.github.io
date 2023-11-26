@@ -14,17 +14,26 @@ import { Grid } from '@mantine/core';
 import { List, ThemeIcon } from '@mantine/core';
 import { SocialItem } from '../components/SocialItem';
 import { useMantineTheme } from '@mantine/core';
+import { getMarkDown } from '../lib/getMarkDown';
 
-export default function HomePage() {
+export async function getStaticProps() {
+  // Get the path to the markdown file
+  const { content } = await getMarkDown('public/markdown/Home.md');
+
+  return {
+    props: {
+      content,
+    },
+  };
+}
+
+interface HomePageProps {
+  content: string;
+}
+
+const HomePage: React.FC<HomePageProps> = ({ content }) => {
   const theme = useMantineTheme();
-  const [content, setContent] = useState('');
   const { colorScheme } = useMantineColorScheme();
-
-  useEffect(() => {
-    fetch('markdown/Home.md')
-      .then((res) => res.text())
-      .then((text) => setContent(text));
-  }, []);
 
   return (
     <Container sx={{ height: '100vh', padding: '15px', marginTop: '2%' }} maw="90%">
@@ -137,7 +146,7 @@ export default function HomePage() {
                   <Title className={classes.link}>arunavaseal1@gmail.com</Title>
                 </List.Item>
                 {SOCIALS.map((item) => (
-                  <SocialItem name={item.name} url={item.url} icon={item.icon} />
+                  <SocialItem name={item.name} url={item.url} icon={item.icon} key={item.name} />
                 ))}
               </List>
             </Stack>
@@ -146,4 +155,6 @@ export default function HomePage() {
       </Grid>
     </Container>
   );
-}
+};
+
+export default HomePage;

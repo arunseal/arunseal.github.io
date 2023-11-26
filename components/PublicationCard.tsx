@@ -5,11 +5,11 @@ import InfoText from './InfoText';
 import { useMantineColorScheme } from '@mantine/core';
 
 interface CardProps {
-  file: string;
+  text: string;
   link: string;
 }
 
-const PublicationCard: React.FC<CardProps> = ({ file, link }) => {
+const PublicationCard: React.FC<CardProps> = ({ text, link }) => {
   const { colorScheme } = useMantineColorScheme();
   return (
     <MantineCard
@@ -19,7 +19,7 @@ const PublicationCard: React.FC<CardProps> = ({ file, link }) => {
     >
       <Grid>
         <Col span={10}>
-          <InfoText file={file} />
+          <InfoText text={text} />
         </Col>
         <Center>
           <Col span={2}>

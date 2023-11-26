@@ -1,20 +1,13 @@
 import { useMantineTheme } from '@mantine/core';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { useEffect, useState } from 'react';
 
-export type InfoText = {
-  file: string;
+export type InfoTextProps = {
+  text: string;
 };
 
-const InfoText = ({ file }: InfoText) => {
+const InfoText = ({ text }: InfoTextProps) => {
   const theme = useMantineTheme();
-  const [text, setText] = useState('');
-  useEffect(() => {
-    fetch(file)
-      .then((res) => res.text())
-      .then((text) => setText(text));
-  }, []);
   return (
     <Markdown
       components={{

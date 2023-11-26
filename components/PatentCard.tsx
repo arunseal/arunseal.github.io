@@ -4,10 +4,10 @@ import InfoText from './InfoText';
 import { useMantineColorScheme } from '@mantine/core';
 
 interface CardProps {
-  file: string;
+  text: string;
 }
 
-const PatentCard: React.FC<CardProps> = ({ file }) => {
+const PatentCard: React.FC<CardProps> = ({ text }) => {
   const { colorScheme } = useMantineColorScheme();
   return (
     <MantineCard
@@ -15,7 +15,7 @@ const PatentCard: React.FC<CardProps> = ({ file }) => {
       sx={{ width: '90%', margin: '0 auto', borderRadius: '30px' }}
       bg={colorScheme === 'dark' ? 'gray.9' : 'gray.2'}
     >
-      <InfoText file={file} />
+      <InfoText text={text} />
     </MantineCard>
   );
 };

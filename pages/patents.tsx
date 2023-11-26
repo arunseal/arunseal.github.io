@@ -1,8 +1,28 @@
 import { Container, Stack, Title } from '@mantine/core';
 import { PATENTS } from '../constants/constants';
 import PatentCard from '../components/PatentCard';
+import { getMarkDown } from '../lib/getMarkDown';
+import { TextWithoutImage } from '../components/types';
 
-export default function Patents() {
+export async function getStaticProps() {
+  let list: TextWithoutImage[] = [];
+
+  PATENTS.map(async (pat) => {
+    const { content } = await getMarkDown(pat.file);
+    list.push({ text: content });
+  });
+  return {
+    props: {
+      list,
+    },
+  };
+}
+
+interface PatentProps {
+  list: TextWithoutImage[];
+}
+
+const Patents: React.FC<PatentProps> = ({ list }) => {
   return (
     <Container
       sx={{
@@ -18,10 +38,12 @@ export default function Patents() {
         <Title order={1} variant="gradient">
           Patents
         </Title>
-        {PATENTS.map((pat) => (
-          <PatentCard file={pat.file} />
+        {list.map((pat) => (
+          <PatentCard text={pat.text} key={pat.text} />
         ))}
       </Stack>
     </Container>
   );
-}
+};
+
+export default Patents;
