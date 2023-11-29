@@ -79,7 +79,7 @@ export const NavbarSimple = ({ opened, handleOpened }: NavbarProps) => {
       p="md"
       hiddenBreakpoint="sm"
       hidden={!opened}
-      width={{ sm: 190, lg: 220 }}
+      width={{ sm: 180, lg: 200 }}
     >
       <Navbar.Section>{links}</Navbar.Section>
     </Navbar>
