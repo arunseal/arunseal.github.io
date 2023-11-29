@@ -36,13 +36,6 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
             header={<AppHeader opened={opened} handleOpened={handleOpened} />}
             navbar={<NavbarSimple opened={opened} handleOpened={handleOpened} />}
             padding={'sm'}
-            styles={(theme) => ({
-              main: {
-                backgroundColor:
-                  theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0],
-                overflowY: 'auto',
-              },
-            })}
           >
             <Component {...pageProps} />
           </AppShell>
