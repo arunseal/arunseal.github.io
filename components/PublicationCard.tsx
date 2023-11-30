@@ -18,14 +18,14 @@ const PublicationCard: React.FC<CardProps> = ({ text, link }) => {
       bg={colorScheme === 'dark' ? 'gray.9' : 'gray.2'}
     >
       <Grid>
-        <Col span={10}>
+        <Col span={12} xl={10} lg={9}>
           <InfoText text={text} />
         </Col>
         <Center>
-          <Col span={2}>
+          <Col span={12} xl={2} lg={3}>
             <Button
               radius="xl"
-              size="xl"
+              size="lg"
               variant="filled"
               leftIcon={<IconExternalLink />}
               component="a"

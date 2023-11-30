@@ -19,11 +19,11 @@ const EducationCard: React.FC<CardProps> = ({ text, imageSrc, bgEnabled }) => {
       bg={colorScheme === 'dark' ? 'gray.9' : 'gray.2'}
     >
       <Grid>
-        <Col span={9}>
+        <Col span={12} xl={9} lg={8}>
           <InfoText text={text} />
         </Col>
         <Center>
-          <Col span={3}>
+          <Col span={12} xl={3} lg={4}>
             <Image
               src={imageSrc}
               alt="Logo"

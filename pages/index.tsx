@@ -36,8 +36,8 @@ const HomePage: React.FC<HomePageProps> = ({ content }) => {
   const { colorScheme } = useMantineColorScheme();
 
   return (
-    <Container sx={{ height: '100vh', padding: '15px', marginTop: '2%' }} maw="90%">
-      <Group position="apart" spacing="sm">
+    <Container sx={{ height: '100vh', padding: '5px', marginTop: '2%' }} maw="95%">
+      <Group position="center" spacing="sm">
         <Stack align="center">
           <Title
             weight={500}
