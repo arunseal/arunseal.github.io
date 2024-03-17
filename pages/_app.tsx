@@ -6,6 +6,7 @@ import { MantineProvider, ColorScheme, ColorSchemeProvider, AppShell } from '@ma
 import { Notifications } from '@mantine/notifications';
 import AppHeader from '../components/Header';
 import { NavbarSimple } from '../components/Navbar';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function App(props: AppProps & { colorScheme: ColorScheme }) {
   const { Component, pageProps } = props;
@@ -38,6 +39,7 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
             padding={'sm'}
           >
             <Component {...pageProps} />
+            <Analytics />
           </AppShell>
           <Notifications />
         </MantineProvider>
